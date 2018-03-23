@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion project.sdk
+
+    defaultConfig {
+        minSdkVersion project.minSdk
+        targetSdkVersion project.sdk
+        applicationId "com.gihub.florent37.depth.sample"
+        versionCode 1
+        versionName "1.0"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:cardview-v7:'+ project.supportVersion
+    compile 'com.android.support:design:'+ project.supportVersion
+    compile project(':depth')
+
+    compile 'com.github.florent37:awesomebar:1.0.2'
+}
